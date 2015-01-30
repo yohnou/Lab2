@@ -3,8 +3,6 @@
 
 #include "../DynamicArray/dynamicArray.h"
 
-#include  <vld.h>
-
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace DynamicArrayTests
@@ -131,12 +129,13 @@ namespace DynamicArrayTests
 		//		Assert::AreEqual(int(i*i), tableau.getElement(i));
 		//	}
 		//	// Est-ce que les éléments vides sont initialisés à 0 ?
-		//	for (unsigned int i = CAPACITE_DEPART; i < tableau.getCapacite() - 1; ++i)
+		//	for (unsigned int i = CAPACITE_DEPART; i < INDEX_NOUVEL_ELEMENT; ++i)
 		//	{
 		//		Assert::AreEqual(0, tableau.getElement(i));
 		//	}
 		//	// Est-ce que le nouvel élément a été ajouté
 		//	Assert::AreEqual(NOUVELLE_ELEMENT, tableau.getElement(INDEX_NOUVEL_ELEMENT));
+		//	Assert::AreEqual(INDEX_NOUVEL_ELEMENT + 1, tableau.getCapacite());
 		//}
 
 
