@@ -15,72 +15,72 @@ namespace DynamicArrayTests
 		// Partie 1  (lab 2)
 		/////////////////////////////////////////////////
 
-		//TEST_METHOD(la_capacite_par_defaut_d_un_dynamicArray_est_de_100)
-		//{
-		//	//Arrange
-		//	const int CAPACITE_DEFAUT = 100;
-		//	DynamicArray tableau;
+		TEST_METHOD(la_capacite_par_defaut_d_un_dynamicArray_est_de_100)
+		{
+			//Arrange
+			const int CAPACITE_DEFAUT = 100;
+			DynamicArray tableau;
 
-		//	//Action
-		//	int capacite = tableau.getCapacite();
+			//Action
+			int capacite = tableau.getCapacite();
 
-		//	//Assert
-		//	Assert::AreEqual(CAPACITE_DEFAUT, capacite);
-		//}
+			//Assert
+			Assert::AreEqual(CAPACITE_DEFAUT, capacite);
+		}
 
-		//TEST_METHOD(la_valeur_par_defaut_des_elements_d_un_dyanmicArray_est_0)
-		//{
-		//	//Action
-		//	DynamicArray tableau;
+		TEST_METHOD(la_valeur_par_defaut_des_elements_d_un_dyanmicArray_est_0)
+		{
+			//Action
+			DynamicArray tableau;
 
-		//	//Assert
-		//	for (int i = 0; i < tableau.getCapacite(); i++)
-		//	{
-		//		Assert::AreEqual(0, tableau.getElement(i));
-		//	}
-		//}
+			//Assert
+			for (int i = 0; i < tableau.getCapacite(); i++)
+			{
+				Assert::AreEqual(0, tableau.getElement(i));
+			}
+		}
 
 
-		//TEST_METHOD(setElement_devrait_initialiser_un_element_du_dynamicArray)
-		//{
-		//	//Arrange
-		//	const int NOUVELLE_VALEUR_ELEMENT = 99;
-		//	const int INDEX_ELEMENT = 1;
-		//	DynamicArray tableau;
+		TEST_METHOD(setElement_devrait_initialiser_un_element_du_dynamicArray)
+		{
+			//Arrange
+			const int NOUVELLE_VALEUR_ELEMENT = 99;
+			const int INDEX_ELEMENT = 1;
+			DynamicArray tableau;
 
-		//	//Action
-		//	tableau.setElement(INDEX_ELEMENT, NOUVELLE_VALEUR_ELEMENT);
+			//Action
+			tableau.setElement(INDEX_ELEMENT, NOUVELLE_VALEUR_ELEMENT);
 
-		//	//Assert
-		//	Assert::AreEqual(NOUVELLE_VALEUR_ELEMENT, tableau.getElement(INDEX_ELEMENT));
-		//}
+			//Assert
+			Assert::AreEqual(NOUVELLE_VALEUR_ELEMENT, tableau.getElement(INDEX_ELEMENT));
+		}
 
-		//TEST_METHOD(augumenter_la_capacite_d_un_dynamicArray_devrait_preserver_le_contenu_deja_present)
-		//{
-		//	//Arrange
-		//	const int CAPACITE_DEPART = 3;
-		//	const int NOUVELLE_CAPACITE = 5;
+		TEST_METHOD(augumenter_la_capacite_d_un_dynamicArray_devrait_preserver_le_contenu_deja_present)
+		{
+			//Arrange
+			const int CAPACITE_DEPART = 3;
+			const int NOUVELLE_CAPACITE = 5;
 
-		//	DynamicArray tableau(CAPACITE_DEPART);
+			DynamicArray tableau(CAPACITE_DEPART);
 
-		//	for (unsigned int i = 0; i < CAPACITE_DEPART; ++i)
-		//	{
-		//		tableau.setElement(i, i*i);
-		//	}
+			for (unsigned int i = 0; i < CAPACITE_DEPART; ++i)
+			{
+				tableau.setElement(i, i*i);
+			}
 
-		//	//Action
-		//	tableau.setCapacite(NOUVELLE_CAPACITE);
+			//Action
+			tableau.setCapacite(NOUVELLE_CAPACITE);
 
-		//	//Assert
-		//	for (unsigned int i = 0; i < CAPACITE_DEPART; ++i)
-		//	{
-		//		Assert::AreEqual(int(i*i), tableau.getElement(i));
-		//	}
-		//	for (unsigned int i = CAPACITE_DEPART; i < NOUVELLE_CAPACITE; ++i)
-		//	{
-		//		Assert::AreEqual(0, tableau.getElement(i));
-		//	}
-		//}
+			//Assert
+			for (unsigned int i = 0; i < CAPACITE_DEPART; ++i)
+			{
+				Assert::AreEqual(int(i*i), tableau.getElement(i));
+			}
+			for (unsigned int i = CAPACITE_DEPART; i < NOUVELLE_CAPACITE; ++i)
+			{
+				Assert::AreEqual(0, tableau.getElement(i));
+			}
+		}
 
 		//TEST_METHOD(diminuer_la_capacite_d_un_dynamicArray_devrait_modifier_sa_capacite)
 		//{
@@ -106,57 +106,57 @@ namespace DynamicArrayTests
 		//	}
 		//}
 
-		//TEST_METHOD(ajouter_un_element_au_dela_de_la_capacite_devrait_auto_agrandir_le_dynamicArray)
-		//{
-		//	//Arrange
-		//	const int CAPACITE_DEPART = 5;
-		//	const int NOUVELLE_ELEMENT = 99;
-		//	const int INDEX_NOUVEL_ELEMENT = 10;
-		//	DynamicArray tableau(CAPACITE_DEPART);
+		TEST_METHOD(ajouter_un_element_au_dela_de_la_capacite_devrait_auto_agrandir_le_dynamicArray)
+		{
+			//Arrange
+			const int CAPACITE_DEPART = 5;
+			const int NOUVELLE_ELEMENT = 99;
+			const unsigned int INDEX_NOUVEL_ELEMENT = 10;
+			DynamicArray tableau(CAPACITE_DEPART);
 
-		//	for (unsigned int i = 0; i < CAPACITE_DEPART; ++i)
-		//	{
-		//		tableau.setElement(i, i*i);
-		//	}
+			for (unsigned int i = 0; i < CAPACITE_DEPART; ++i)
+			{
+				tableau.setElement(i, i*i);
+			}
 
-		//	//Action
-		//	tableau.setElement(INDEX_NOUVEL_ELEMENT, NOUVELLE_ELEMENT);
+			//Action
+			tableau.setElement(INDEX_NOUVEL_ELEMENT, NOUVELLE_ELEMENT);
 
-		//	//Assert
-		//	// Est-ce que les anciens éléments sont conservés ?
-		//	for (unsigned int i = 0; i < CAPACITE_DEPART; ++i)
-		//	{
-		//		Assert::AreEqual(int(i*i), tableau.getElement(i));
-		//	}
-		//	// Est-ce que les éléments vides sont initialisés à 0 ?
-		//	for (unsigned int i = CAPACITE_DEPART; i < INDEX_NOUVEL_ELEMENT; ++i)
-		//	{
-		//		Assert::AreEqual(0, tableau.getElement(i));
-		//	}
-		//	// Est-ce que le nouvel élément a été ajouté
-		//	Assert::AreEqual(NOUVELLE_ELEMENT, tableau.getElement(INDEX_NOUVEL_ELEMENT));
-		//	Assert::AreEqual(INDEX_NOUVEL_ELEMENT + 1, tableau.getCapacite());
-		//}
+			//Assert
+			// Est-ce que les anciens éléments sont conservés ?
+			for (unsigned int i = 0; i < CAPACITE_DEPART; ++i)
+			{
+				Assert::AreEqual(int(i*i), tableau.getElement(i));
+			}
+			// Est-ce que les éléments vides sont initialisés à 0 ?
+			for (unsigned int i = CAPACITE_DEPART; i < INDEX_NOUVEL_ELEMENT; ++i)
+			{
+				Assert::AreEqual(0, tableau.getElement(i));
+			}
+			// Est-ce que le nouvel élément a été ajouté
+			Assert::AreEqual(NOUVELLE_ELEMENT, tableau.getElement(INDEX_NOUVEL_ELEMENT));
+			Assert::AreEqual(INDEX_NOUVEL_ELEMENT + 1, tableau.getCapacite());
+		}
 
 
-		//TEST_METHOD(creer_un_dynamicArray_d_une_capacite_inferieure_a_1_devrait_lancer_une_excpetion)
-		//{
-		//	//Arrange
-		//	bool exceptionThrown = false;
+		TEST_METHOD(creer_un_dynamicArray_d_une_capacite_inferieure_a_1_devrait_lancer_une_excpetion)
+		{
+			//Arrange
+			bool exceptionThrown = false;
 
-		//	//Action
-		//	try
-		//	{
-		//		DynamicArray tableau(0);
-		//	}
-		//	catch (std::invalid_argument ex)
-		//	{
-		//		exceptionThrown = true;
-		//	}
+			//Action
+			try
+			{
+				DynamicArray tableau(0);
+			}
+			catch (std::invalid_argument ex)
+			{
+				exceptionThrown = true;
+			}
 
-		//	//Assert
-		//	Assert::IsTrue(exceptionThrown);
-		//}
+			//Assert
+			Assert::IsTrue(exceptionThrown);
+		}
 
 
 		//TEST_METHOD(acceder_a_un_element_hors_du_tableau_devrait_lancer_une_excpetion)
