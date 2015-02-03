@@ -35,13 +35,14 @@ void DynamicArray::setElement(unsigned int _index, int _valeur)
 }
 
 int DynamicArray::getElement(unsigned int _index)
-{
+{ 
+	if (_index < 0 || _index > capacite) throw std::out_of_range("hors limite");
 	return tabElements[_index];
 }
 
 void DynamicArray::setCapacite(unsigned int _capacite)
 {
-
+	if (_capacite < 1) throw std::invalid_argument("marche pas");
 	int *tempTab = new int[_capacite];
 	for (int i = 0; i < _capacite; i++)
 	{
